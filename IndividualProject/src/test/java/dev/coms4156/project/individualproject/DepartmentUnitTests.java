@@ -17,9 +17,8 @@ import org.springframework.test.context.ContextConfiguration;
 public class DepartmentUnitTests {
 
   @BeforeAll
-  public static void setupDepartmentForTesting() {
-    HashMap<String, Course> courses = new HashMap<>();
-    testDepartment = new Department("COMS", courses, "Luca Carloni", 2700);
+  public static void setupDepartment() {
+    testDepartment = new Department("COMS", new HashMap<>(), "Luca Carloni", 2700);
   }
 
   @Test

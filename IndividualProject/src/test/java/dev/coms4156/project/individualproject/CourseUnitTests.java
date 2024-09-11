@@ -16,7 +16,7 @@ import org.springframework.test.context.ContextConfiguration;
 public class CourseUnitTests {
 
   @BeforeAll
-  public static void setupCourseForTesting() {
+  public static void setupCourse() {
     testCourse = new Course("Griffin Newbold", "417 IAB", "11:40-12:55", 250);
     testCourse.setEnrolledStudentCount(249);
   }
