@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,17 +18,11 @@ public class CourseUnitTests {
   @BeforeAll
   public static void setupCourseForTesting() {
     testCourse = new Course("Griffin Newbold", "417 IAB", "11:40-12:55", 250);
-  }
-
-  @Test
-  public void toStringTest() {
-    String expectedResult = "\nInstructor: Griffin Newbold; Location: 417 IAB; Time: 11:40-12:55";
-    assertEquals(expectedResult, testCourse.toString());
+    testCourse.setEnrolledStudentCount(249);
   }
 
   @Test
   public void enrolledStudentCountTest() {
-    testCourse.setEnrolledStudentCount(249);
     assertFalse(testCourse.isCourseFull());
     testCourse.enrollStudent();
     assertTrue(testCourse.isCourseFull());
@@ -37,26 +32,26 @@ public class CourseUnitTests {
   
   @Test
   public void changeInstructorTest() {
-    testCourse.reassignInstructor("Griffin Newbold - modified");
-    assertEquals("Griffin Newbold - modified", testCourse.getInstructorName());
-    testCourse.reassignInstructor("Griffin Newbold");
-    assertEquals("Griffin Newbold", testCourse.getInstructorName());
+    testCourse.reassignInstructor("Gail Kaiser");
+    assertEquals("Gail Kaiser", testCourse.getInstructorName());
   }
 
   @Test
   public void changeLocationTest() {
-    testCourse.reassignLocation("417 IAB - modified");
-    assertEquals("417 IAB - modified", testCourse.getCourseLocation());
-    testCourse.reassignLocation("417 IAB");
-    assertEquals("417 IAB", testCourse.getCourseLocation());
+    testCourse.reassignLocation("501 NWC");
+    assertEquals("501 NWC", testCourse.getCourseLocation());
   }
 
   @Test
   public void changeTimeTest() {
-    testCourse.reassignTime("11:40-12:55 - modified");
-    assertEquals("11:40-12:55 - modified", testCourse.getCourseTimeSlot());
-    testCourse.reassignTime("11:40-12:55");
-    assertEquals("11:40-12:55", testCourse.getCourseTimeSlot());
+    testCourse.reassignTime("10:10-11:25");
+    assertEquals("10:10-11:25", testCourse.getCourseTimeSlot());
+  }
+
+  @AfterAll
+  public static void toStringTest() {
+    String expectedResult = "\nInstructor: Gail Kaiser; Location: 501 NWC; Time: 10:10-11:25";
+    assertEquals(expectedResult, testCourse.toString());
   }
 
   /** The test course instance used for testing. */
