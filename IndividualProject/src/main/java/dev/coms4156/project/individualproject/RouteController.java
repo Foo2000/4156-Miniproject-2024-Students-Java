@@ -138,7 +138,7 @@ public class RouteController {
         departmentMapping = IndividualProjectApplication.myFileDatabase.getDepartmentMapping();
         return new ResponseEntity<>(
             "There are: "
-                + -departmentMapping.get(deptCode).getNumberOfMajors()
+                + departmentMapping.get(deptCode).getNumberOfMajors()
                 + " majors in the department",
             HttpStatus.OK);
       }
@@ -516,6 +516,6 @@ public class RouteController {
 
   private ResponseEntity<?> handleException(Exception e) {
     System.out.println(e.toString());
-    return new ResponseEntity<>("An Error has occurred", HttpStatus.OK);
+    return new ResponseEntity<>("An Error has occurred", HttpStatus.INTERNAL_SERVER_ERROR);
   }
 }
