@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
+/** This class tests the Course class. */
 @SpringBootTest
 @ContextConfiguration
 public class CourseUnitTests {

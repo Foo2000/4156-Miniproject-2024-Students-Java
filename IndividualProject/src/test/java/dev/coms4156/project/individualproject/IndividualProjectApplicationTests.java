@@ -11,10 +11,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
+/** This class tests the IndividualProjectApplication class. */
 @SpringBootTest
 @ContextConfiguration
 public class IndividualProjectApplicationTests {
 
+  /** setup IndividualProjectApplication and mocks for testing. */
   @BeforeEach
   public void setUpIndividualProjectApplicationAndMocksForTesting() {
     testApplication = new IndividualProjectApplication();

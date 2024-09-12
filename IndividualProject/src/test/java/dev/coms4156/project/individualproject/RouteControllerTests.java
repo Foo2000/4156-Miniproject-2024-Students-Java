@@ -16,10 +16,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
 
+/** This class tests the RouteController class. */
 @SpringBootTest
 @ContextConfiguration
 public class RouteControllerTests {
 
+  /** setup RouteController and mocks for testing. */
   @BeforeEach
   public void setUpRouteControllerAndMocksForTesting() {
     testRouteController = new RouteController();

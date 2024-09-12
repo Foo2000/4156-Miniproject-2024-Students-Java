@@ -10,10 +10,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
+/** This class tests the Department class. */
 @SpringBootTest
 @ContextConfiguration
 public class DepartmentUnitTests {
 
+  /** setup department for testing. */
   @BeforeEach
   public void setupDepartmentForTesting() {
     Course coms4156 = new Course("Gail Kaiser", "501 NWC", "10:10-11:25", 120);
