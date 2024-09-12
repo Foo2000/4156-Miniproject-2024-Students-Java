@@ -19,10 +19,7 @@ public class Department implements Serializable {
    * @param numberOfMajors The number of majors in the department.
    */
   public Department(
-      String deptCode,
-      Map<String, Course> courses,
-      String departmentChair,
-      int numberOfMajors) {
+      String deptCode, Map<String, Course> courses, String departmentChair, int numberOfMajors) {
     this.courses = courses;
     this.departmentChair = departmentChair;
     this.numberOfMajors = numberOfMajors;

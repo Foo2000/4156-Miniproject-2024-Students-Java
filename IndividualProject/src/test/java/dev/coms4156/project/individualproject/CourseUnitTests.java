@@ -29,7 +29,7 @@ public class CourseUnitTests {
     testCourse.setEnrolledStudentCount(0);
     assertFalse(testCourse.dropStudent());
   }
-  
+
   @Test
   public void changeInstructorTest() {
     testCourse.reassignInstructor("Gail Kaiser");
