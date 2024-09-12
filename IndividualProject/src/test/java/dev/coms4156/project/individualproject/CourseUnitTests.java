@@ -1,14 +1,15 @@
 package dev.coms4156.project.individualproject;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
+/** This class tests the Course class. */
 @SpringBootTest
 @ContextConfiguration
 public class CourseUnitTests {
@@ -29,7 +30,7 @@ public class CourseUnitTests {
     testCourse.setEnrolledStudentCount(0);
     assertFalse(testCourse.dropStudent());
   }
-  
+
   @Test
   public void changeInstructorTest() {
     testCourse.reassignInstructor("Gail Kaiser");
