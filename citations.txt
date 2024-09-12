@@ -1,0 +1,14 @@
+Link: https://plugins.jetbrains.com/plugin/8527-google-java-format
+Description: format java with Google Java Style in Intellij plugin
+
+Link: https://spring.io/guides
+Description: Offitial Spring guide
+
+Link: https://www.baeldung.com/
+Description: Baeldung Spring tutorials
+
+Link: https://site.mockito.org/
+Description: mockito doc
+
+Link: https://pmd.github.io/pmd/pmd_userdocs_making_rulesets.html
+Description: PMD doc
