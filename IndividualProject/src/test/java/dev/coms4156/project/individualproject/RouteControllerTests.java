@@ -9,6 +9,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import java.util.HashMap;
+import java.util.Map;
+
 import org.mockito.Mockito;
 import org.mockito.MockedStatic;
 
@@ -28,10 +30,10 @@ public class RouteControllerTests {
 
         Course coms4156 = new Course("Griffin Newbold", "417 IAB", "11:40-12:55", 250);
         coms4156.setEnrolledStudentCount(10);
-        HashMap<String, Course> courses = new HashMap<>();
+        Map<String, Course> courses = new HashMap<>();
         courses.put("4156", coms4156);
         Department compSci = new Department("COMS", courses, "Luca Carloni", 2700);
-        HashMap<String, Department> mapping = new HashMap<>();
+        Map<String, Department> mapping = new HashMap<>();
         mapping.put("COMS", compSci);
         Mockito.when(mockDatabase.getDepartmentMapping()).thenReturn(mapping);
     }

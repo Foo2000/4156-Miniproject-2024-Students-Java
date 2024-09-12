@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -16,7 +17,7 @@ public class DepartmentUnitTests {
   @BeforeEach
   public void setupDepartmentForTesting() {
     Course coms4156 = new Course("Gail Kaiser", "501 NWC", "10:10-11:25", 120);
-    HashMap<String, Course> courses = new HashMap<>();
+    Map<String, Course> courses = new HashMap<>();
     courses.put("4156", coms4156);
     testDepartment = new Department("COMS", courses, "Luca Carloni", 2700);
   }

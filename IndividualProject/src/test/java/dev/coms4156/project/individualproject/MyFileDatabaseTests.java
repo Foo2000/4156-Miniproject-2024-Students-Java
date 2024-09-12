@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import java.io.File;
 import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -22,7 +23,7 @@ public class MyFileDatabaseTests {
     @Test
     public void myFileDatabaseTest() {
         Department compSci = new Department("COMS", new HashMap<>(), "Luca Carloni", 2700);
-        HashMap<String, Department> mapping = new HashMap<>();
+        Map<String, Department> mapping = new HashMap<>();
         mapping.put("COMS", compSci);
 
         testDatabase.setMapping(mapping);
