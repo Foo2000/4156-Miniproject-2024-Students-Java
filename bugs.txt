@@ -1,0 +1,48 @@
+Issues identified by PMD:
+
+Issue: The method 'toString()' is missing an @Override annotation.
+Where: Course.java, Department.java
+Proper name identified by PMD: MissingOverride
+
+Issue: Avoid using implementation types like 'HashMap'; use the interface instead.
+Where: all 5 classes
+Proper name identified by PMD: LooseCoupling
+
+Issue: Position literals first in String comparisons.
+Where: IndividualProjectApplication.java
+Proper name identified by PMD: LiteralsFirstInComparisons
+
+Issue: Return an empty collection rather than null.
+Where: MyFileDatabase.java
+Proper name identified by PMD: ReturnEmptyCollectionRatherThanNull
+
+Issue: Avoid the use of value in annotations when it's the only element.
+Where: RouteController.java
+Proper name identified by PMD: UnnecessaryAnnotationValueElement
+
+Issue: When doing a String.toLowerCase()/toUpperCase() call, use a Locale.
+Where: RouteController.java
+Proper name identified by PMD: UseLocaleWithCaseConversions
+
+Issue: Avoid unused local variables such as 'requestedCourse'.
+Where: RouteController.java
+Proper name identified by PMD: UnusedLocalVariable
+
+
+
+Other issues:
+
+Issue: Initial enrolledStudentCount should be 0 rather than 500.
+Where: Course.java
+
+Issue: Error handling of enrollStudent and dropStudent.
+Where: Course.java
+
+Issue: getCourseLocation, getInstructorName, and isCourseFull are returning wrong results.
+Where: Course.java
+
+Issue: getNumberOfMajors, getDepartmentChair, and toString are returning wrong results.
+Where: Department.java
+
+Issue: Many returning HttpStatus are incorrect.
+Where: RouteController.java
