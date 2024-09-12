@@ -1,24 +1,24 @@
 package dev.coms4156.project.individualproject;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-
-import java.util.HashMap;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+import java.util.HashMap;
 
-/** This class tests the Department class. */
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 @SpringBootTest
 @ContextConfiguration
 public class DepartmentUnitTests {
 
-  @BeforeAll
-  public static void setupDepartment() {
-    testDepartment = new Department("COMS", new HashMap<>(), "Luca Carloni", 2700);
+  @BeforeEach
+  public void setupDepartmentForTesting() {
+    Course coms4156 = new Course("Gail Kaiser", "501 NWC", "10:10-11:25", 120);
+    HashMap<String, Course> courses = new HashMap<>();
+    courses.put("4156", coms4156);
+    testDepartment = new Department("COMS", courses, "Luca Carloni", 2700);
   }
 
   @Test
@@ -37,10 +37,9 @@ public class DepartmentUnitTests {
 
   @Test
   public void addCourseTest() {
-    Course coms4156 = new Course("Gail Kaiser", "501 NWC", "10:10-11:25", 120);
-    coms4156.setEnrolledStudentCount(109);
-    testDepartment.addCourse("4156", coms4156);
-    assertEquals(coms4156, testDepartment.getCourseSelection().get("4156"));
+    Course coms3827 = new Course("Daniel Rubenstein", "207 Math", "10:10-11:25", 300);
+    testDepartment.addCourse("3827", coms3827);
+    assertEquals(coms3827, testDepartment.getCourseSelection().get("3827"));
   }
 
   @Test
@@ -53,13 +52,9 @@ public class DepartmentUnitTests {
     assertFalse(createdCourse.isCourseFull());
   }
 
-  @AfterAll
-  public static void toStringTest() {
-    String expectedResult =
-            "COMS 3827: \n"
-                    + "Instructor: Daniel Rubenstein; Location: 207 Math; Time: 10:10-11:25\n"
-                    + "COMS 4156: \n"
-                    + "Instructor: Gail Kaiser; Location: 501 NWC; Time: 10:10-11:25\n";
+  @Test
+  public void toStringTest() {
+    String expectedResult = "COMS 4156: \nInstructor: Gail Kaiser; Location: 501 NWC; Time: 10:10-11:25\n";
     assertEquals(expectedResult, testDepartment.toString());
   }
 

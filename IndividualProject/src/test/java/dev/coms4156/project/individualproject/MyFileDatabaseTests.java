@@ -1,17 +1,21 @@
 package dev.coms4156.project.individualproject;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 import java.io.File;
 import java.util.HashMap;
 
-import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-/** This class tests the MyFileDatabase class. */
+@SpringBootTest
+@ContextConfiguration
 public class MyFileDatabaseTests {
 
     @BeforeAll
-    public static void setUpDatabase() {
+    public static void setUpDatabaseForTesting() {
         testDatabase = new MyFileDatabase(1, "./testData.txt");
     }
 
